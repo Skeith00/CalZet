@@ -1,0 +1,121 @@
+@import "./node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+body {
+    background-color: #b2cecf;
+}
+header {
+    background: black;
+    background-color: black !important;
+    height: 75px;
+}
+.calzet-header {
+    width: 100%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+@media (min-width: 768px) {
+    .calzet-header {
+      width: 760px;
+    }
+}
+@media (min-width: 992px) {
+    .calzet-header {
+        width: 980px;
+    }
+}
+@media (min-width: 1200px) {
+    .calzet-header {
+        width: 1180px;
+    }
+}
+img.logo {
+    width:75px;
+    height:75px;
+}
+.navbar {
+    margin-bottom: 0px;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+}
+.components-header {
+    float: left;
+    height:75px;    
+}
+.component-logo {
+    width: 30%;  
+}
+.component-nav {
+    width: 70%;  
+}
+
+.navbar-collapse > a {
+    color: rgb(235, 233, 233);
+    display: block;
+    line-height: 38px;
+    padding: 0 10px;
+    text-decoration: none;
+}
+
+// Color for responsive button
+.navbar-toggle {
+    border-color: white
+}
+.navbar-toggle .icon-bar {
+    background-color: white
+}
+/*#myFooter{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+ }
+#myFooter .footer-copyright{
+    text-align: center;
+    color: #777;
+}
+#myFooter ul{
+    list-style-type: none;
+    padding: 0;
+}
+#myFooter li{
+    display: inline-block;
+    margin: 0px 15px;
+    line-height: 2;
+}
+#myFooter a{
+    color: #282b2d;
+    font-size: 18px;
+}
+#myFooter .footer-social{
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #eee;
+}
+#myFooter .fa{
+    //font-size: 36px;
+    margin-left: 20px;
+    background-color: white;
+    color: #d0d0d0;
+    border-radius: 51%;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 43px;
+    text-decoration: none;
+    transition:color 0.2s;
+}
+#myFooter .fa-facebook:hover{
+   color: #2b55ff;
+}
+#myFooter .fa-google-plus:hover {
+    color:red;
+}
+#myFooter .fa-twitter:hover{
+    color: #00aced;
+}*/
+.fill {
+    min-height: 100%;   
+}
