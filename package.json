@@ -1,5 +1,5 @@
 {
-  "name": "webpack-learning",
+  "name": "calzet",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,16 +8,14 @@
     "watch": "npm run build --watch",
     "server": "webpack-dev-server --env development",
     "css": "node-sass -o dist/css src/scss",
-    "csswatch": "node-sass -w -o dist/css src/scss"  
-    
+    "csswatch": "node-sass -w -o dist/css src/scss"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "bootstrap-sass": "^3.3.7",
+    "bulma": "^0.6.2",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.5",
-    "jquery": "^3.2.1",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",
@@ -27,6 +25,7 @@
     "webpack": "^3.10.0"
   },
   "dependencies": {
-    "vue": "^2.5.10"
+    "vue": "^2.5.10",
+    "vue-carousel": "^0.6.5"
   }
 }

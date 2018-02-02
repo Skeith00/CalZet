@@ -1,12 +1,14 @@
-import $ from 'jquery';
 import Vue from 'vue';
 import CustomHeader from './modules/Header.vue';
 import CustomFooter from './modules/Footer.vue';
-import CustomPanel from './modules/Panel.vue';
-import CustomNav from './modules/Nav.vue';
-import CustomJumbo from './modules/Jumbotron.vue';
+import CustomTabPanel from './modules/TabPanel.vue';
+import Home from './modules/Home.vue';
+import House from './modules/House.vue';
 
-import 'bootstrap';
+/*import Rooms from './modules/Jumbotron.vue';
+import House from './modules/Jumbotron.vue';
+import Prices from './modules/Jumbotron.vue';
+import Location from './modules/Jumbotron.vue';*/
 
 new Vue({
     el: '#root',
@@ -16,8 +18,9 @@ new Vue({
     components: {
         'customheader' : CustomHeader,
         'customfooter': CustomFooter,
-        'customnav': CustomNav,
-        'custompanel':CustomPanel,
-        'customjumbo': CustomJumbo,
+        'customtabpanel': CustomTabPanel,
+        'home': Home,
+        'house': House,
+
     } 
 });

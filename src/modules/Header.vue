@@ -1,31 +1,51 @@
 <template>
-  <header>  
-    <div class="calzet-header">
-      <a class="components-header component-logo" href="index.html">
-        <img class="logo" src="dist/images/calzet-logo.png" alt="">
-      </a>
-      <nav class="components-header component-nav navbar">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-              <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-              </button>
-              <div id="navbarCollapse" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav flex-row">
-                  <li v-for="tab in tabs" :class="(currenttab == tab.tab)?'active':''"><a @click="setTab(tab.tab)" :href="tab.link">{{tab.tab}}</a></li>
-                </ul>
-              </div>
-          </div>
-
-          <!-- Collection of nav links and other content for toggling -->
-      </nav>
-    </div>
-	</header>
+    <header class="header">
+        <nav class="navbar header calzet is-dark" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand header">
+                <a class="navbar-item" href="index.html">
+                    <img src="dist/images/calzet-logo2.png" alt="Cal Zet" class="logo">
+                </a>
+                <div :class="['navbar-burger', 'burger', ' is-dark', 'header', {'is-active':toggled}]" data-target="navbarExampleTransparentExample" @click="togglenavmenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div id="navbarExampleTransparentExample" :class="['navbar-menu', {'is-active':toggled}]">
+                <div class="navbar-end">
+                    <a v-for="tab in tabs" class="navbar-item" @click="setTab(tab.code)" :href="tab.link">{{tab.title[langsettings.currentLanguage.code]}}</a>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link" style="width: 130px">
+                            {{langsettings.currentLanguage.name}}
+                        </a>
+                        <div class="navbar-dropdown is-boxed">
+                            <a v-for="language in langsettings.languages"
+                                :class="['navbar-item', { 'is-active': (language.code == langsettings.currentLanguage.code) }]" 
+                                @click="setLang(language)"
+                                href="#">
+                                <p style="margin-left: 8px"><img :src="'dist/images/flags/'+language.flag" alt="flag">
+                                {{language.name}}</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="navbar-item" style="padding-left: 25px">
+                        <div class="field is-grouped">
+                            <p class="control">
+                                <a href="#"><i class="fab fa-facebook-f fa-lg"></i></a>
+                            </p>
+                            <p class="control">
+                                <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
+                            </p>
+                            <p class="control">
+                                <a href="#"><i class="fab fa-google-plus-g fa-lg"></i></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </nav>
+    </header>
 </template>
-
 <script>
 
 export default {
@@ -34,18 +54,32 @@ export default {
     data() {
         return {
             tabs: [
-                {tab: "Contacte", link: "./contacte.html"},
-                {tab: "Habitacions", link: "./habitacions.html"},
-                {tab: "La casa", link: "./casa.html"},
-                {tab: "Tarifes", link: "./tarifes.html"},
-                {tab: "Ubicació", link: "./ubicacio.html"},
+                {title: { CA: "Contacte", ES: "Contacto", AR: "Contacte", EN: "Contact"}, link: "./contacte.html", code: "ct"},
             ],
+            langsettings: {
+                currentLanguage: {name: "Català", code: "CA"},
+                languages: [
+                    {name: "Català", code: "CA", flag: "catalonia.png"},
+                    {name:"Castellano", code: "ES", flag: "es.png" },
+                    {name:"Aranés", code: "AR", flag: "ar.png"},
+                    {name:"English", code: "EN", flag: "eu.png"},
+                ]
+            },
+            toggled: false,
         //currentTab: 'Inicio',
         }
     },
     methods: {
-        setTab(name) {
-            this.currentTab = name;  
+        setTab(code) {
+            this.currentTab = code;
+        }, 
+        setLang(lang) {
+            this.langsettings.currentLanguage.name = lang.name;
+            this.langsettings.currentLanguage.code = lang.code;
+            this.toggled = false;
+        },
+        togglenavmenu() {
+            this.toggled = (this.toggled==true?false:true);
         }
     },
 }
