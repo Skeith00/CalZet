@@ -12,37 +12,21 @@
         <p>La planta baixa disposa de rebedor, dues habitacions i un bany.</p>
         <p>La planta central disposa de la cuina, el rebost, la sala menjador i una habitació.</p>
         <p>La planta alta disposa d’un bany, tres habitacions i la terrassa amb barbacoa.</p>
-        <div id="gallery">
-            <carousel :autoplay="true">
-                <slide v-for="img in imgs" v-bind:data="img" v-bind:key="img.src">
-                    <span class="label">
-                        <img :src="'dist/images/house/'+img.src">
-                    </span>
-                </slide>
-            </carousel>
-        </div>
-    </div>
+        <gallery/>
+    </div>        
 </template>
 
 <script>
-import { Carousel, Slide } from 'vue-carousel';
+import Gallery from "./plugins/Gallery.vue";
 
 export default {
     name: 'panel',
-    components: {
-        Carousel,
-        Slide
-    },
+    components :  {Gallery},
     data() {
         return {
-            imgs: [
-                {src: "p1090867.jpg"},
-                {src: "p1090832.jpg"},
-                {src: "k20_2662.jpg"},
-                {src: "k20_2651.jpg"},
-            ]
+            imgs: ["p1090867.jpg","p1090832.jpg","k20_2662.jpg","k20_2651.jpg"],
         }
-    }
+    },
 
 }
 </script>

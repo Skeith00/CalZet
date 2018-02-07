@@ -21,6 +21,5 @@ new Vue({
         'customtabpanel': CustomTabPanel,
         'home': Home,
         'house': House,
-
     } 
 });
