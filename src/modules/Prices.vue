@@ -1,11 +1,27 @@
 <template>
-    <div class="panel panel-default">
-        <div class="panel-body">A Basic Panel</div>
-    </div> 
+    <div class="content panel">
+        <div class="headerpanel">
+            <div>
+                <span><i class="fas fa-euro-sign fa-3x"></i></span>
+            </div>
+            <div>
+                <h5>Preus</h5>
+            </div>
+		</div>
+        <div>
+            <pricetable></pricetable>
+            <pricetable></pricetable>
+        </div>
+    </div>     
 </template>
 
 <script>
+import PriceTableVue from './plugins/PriceTable.vue';
+
 export default {
-    name: 'panel',    
+    name: 'prices',
+    components: {
+       'pricetable': PriceTableVue
+    }
 }
 </script>

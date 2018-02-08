@@ -216,9 +216,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_Header_vue__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_Footer_vue__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_TabPanel_vue__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_NavPanel_vue__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_Home_vue__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modules_House_vue__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__modules_Prices_vue__ = __webpack_require__(26);
+
 
 
 
@@ -239,9 +241,10 @@ new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     components: {
         'customheader' : __WEBPACK_IMPORTED_MODULE_1__modules_Header_vue__["a" /* default */],
         'customfooter': __WEBPACK_IMPORTED_MODULE_2__modules_Footer_vue__["a" /* default */],
-        'customtabpanel': __WEBPACK_IMPORTED_MODULE_3__modules_TabPanel_vue__["a" /* default */],
+        'customtabpanel': __WEBPACK_IMPORTED_MODULE_3__modules_NavPanel_vue__["a" /* default */],
         'home': __WEBPACK_IMPORTED_MODULE_4__modules_Home_vue__["a" /* default */],
         'house': __WEBPACK_IMPORTED_MODULE_5__modules_House_vue__["a" /* default */],
+        Prices: __WEBPACK_IMPORTED_MODULE_6__modules_Prices_vue__["a" /* default */]
     } 
 });
 
@@ -11888,8 +11891,8 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_TabPanel_vue__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_f0b4746c_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_TabPanel_vue__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_NavPanel_vue__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6f38bbfc_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_NavPanel_vue__ = __webpack_require__(16);
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -11905,14 +11908,14 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_TabPanel_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_f0b4746c_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_TabPanel_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_NavPanel_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6f38bbfc_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_NavPanel_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "src\\modules\\TabPanel.vue"
+Component.options.__file = "src\\modules\\NavPanel.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
 
 /* hot reload */
@@ -11922,9 +11925,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-f0b4746c", Component.options)
+    hotAPI.createRecord("data-v-6f38bbfc", Component.options)
   } else {
-    hotAPI.reload("data-v-f0b4746c", Component.options)
+    hotAPI.reload("data-v-6f38bbfc", Component.options)
 ' + '  }
   module.hot.dispose(function (data) {
     disposed = true
@@ -12026,7 +12029,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-f0b4746c", esExports)
+    require("vue-hot-reload-api")      .rerender("data-v-6f38bbfc", esExports)
   }
 }
 
@@ -12281,7 +12284,6 @@ if (false) {(function () {
             imgs: ["p1090867.jpg", "p1090832.jpg", "k20_2662.jpg", "k20_2651.jpg"]
         };
     }
-
 });
 
 /***/ }),
@@ -12353,6 +12355,11 @@ if (false) {(function () {
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     name: 'gallery',
@@ -12394,27 +12401,39 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    {
+      staticClass: "galleryComponent",
+      on: { mouseover: _vm.stopRotation, mouseout: _vm.startRotation }
+    },
     [
-      _c("p", [
-        _c("a", { on: { click: _vm.prev } }, [_vm._v("Previous")]),
-        _vm._v(" || "),
-        _c("a", { on: { click: _vm.next } }, [_vm._v("Next")])
+      _c("div", { on: { click: _vm.prev } }, [
+        _c("i", { staticClass: "fas fa-chevron-left fa-7x" })
       ]),
       _vm._v(" "),
-      _vm._l([_vm.currentNumber], function(number) {
-        return _c("div", { key: number, attrs: { transition: "fade" } }, [
-          _c("img", {
-            attrs: {
-              src:
+      _c(
+        "div",
+        { staticClass: "gallery" },
+        [
+          _c("transition", { attrs: { name: "slide-fade", mode: "out-in" } }, [
+            _c("img", {
+              key:
                 "dist/images/house/" +
-                _vm.imgs[Math.abs(_vm.currentNumber) % _vm.imgs.length]
-            },
-            on: { mouseover: _vm.stopRotation, mouseout: _vm.startRotation }
-          })
-        ])
-      })
-    ],
-    2
+                _vm.imgs[Math.abs(_vm.currentNumber) % _vm.imgs.length],
+              attrs: {
+                src:
+                  "dist/images/house/" +
+                  _vm.imgs[Math.abs(_vm.currentNumber) % _vm.imgs.length]
+              }
+            })
+          ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("div", { on: { click: _vm.prev } }, [
+        _c("i", { staticClass: "fas fa-chevron-right fa-7x" })
+      ])
+    ]
   )
 }
 var staticRenderFns = []
@@ -12489,6 +12508,244 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-ebac5556", esExports)
+  }
+}
+
+/***/ }),
+/* 26 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Prices_vue__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1e390436_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Prices_vue__ = __webpack_require__(31);
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_Prices_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1e390436_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_Prices_vue__["a" /* default */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src\\modules\\Prices.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-1e390436", Component.options)
+  } else {
+    hotAPI.reload("data-v-1e390436", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+/* 27 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__plugins_PriceTable_vue__ = __webpack_require__(28);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    name: 'prices',
+    components: {
+        'pricetable': __WEBPACK_IMPORTED_MODULE_0__plugins_PriceTable_vue__["a" /* default */]
+    }
+});
+
+/***/ }),
+/* 28 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_PriceTable_vue__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_61df675c_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_PriceTable_vue__ = __webpack_require__(30);
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_PriceTable_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_61df675c_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_PriceTable_vue__["a" /* default */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src\\modules\\plugins\\PriceTable.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-61df675c", Component.options)
+  } else {
+    hotAPI.reload("data-v-61df675c", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+/* 29 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+    name: "pricetable"
+});
+
+/***/ }),
+/* 30 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "priceTable" }, [
+      _c("h3", [_vm._v("\n        Advanced Plan\n    ")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "rate" }, [
+        _vm._v("\n        259"),
+        _c("span", { staticClass: "currency" }, [_vm._v("€")]),
+        _c("span", { staticClass: "each" }, [_vm._v("/persona")])
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "description" }, [
+        _vm._v(
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sodales neque tincidunt diam commodo mattis."
+        )
+      ])
+    ])
+  }
+]
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-61df675c", esExports)
+  }
+}
+
+/***/ }),
+/* 31 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "content panel" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", [_c("pricetable"), _vm._v(" "), _c("pricetable")], 1)
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "headerpanel" }, [
+      _c("div", [
+        _c("span", [_c("i", { staticClass: "fas fa-euro-sign fa-3x" })])
+      ]),
+      _vm._v(" "),
+      _c("div", [_c("h5", [_vm._v("Preus")])])
+    ])
+  }
+]
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-1e390436", esExports)
   }
 }
 

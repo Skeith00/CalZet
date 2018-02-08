@@ -1,14 +1,19 @@
 <template>
 <!--https://vuejs.org/v2/guide/transitions.html-->
-    <div>
-        <p>
-            <a @click="prev">Previous</a> || <a @click="next">Next</a>
-        </p>
-            <div v-for="number in [currentNumber]" transition="fade" v-bind:key="number">
-                <img :src="'dist/images/house/'+imgs[Math.abs(currentNumber) % imgs.length]"
-                    @mouseover="stopRotation"
-                    @mouseout="startRotation"/>
-            </div>
+    <div    @mouseover="stopRotation"
+            @mouseout="startRotation"
+            class="galleryComponent">
+        <div @click="prev">
+            <i class="fas fa-chevron-left fa-7x"/>
+        </div>
+        <div class="gallery">
+              <transition name="slide-fade" mode="out-in">
+                <img :src="'dist/images/house/'+imgs[Math.abs(currentNumber) % imgs.length]" :key="'dist/images/house/'+imgs[Math.abs(currentNumber) % imgs.length]"/>
+            </transition>
+        </div>
+        <div @click="prev">
+            <i class="fas fa-chevron-right fa-7x"/>
+        </div>
     </div>
 </template>
 <script>

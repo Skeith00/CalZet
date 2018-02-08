@@ -27,6 +27,5 @@ export default {
             imgs: ["p1090867.jpg","p1090832.jpg","k20_2662.jpg","k20_2651.jpg"],
         }
     },
-
 }
 </script>

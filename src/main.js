@@ -1,9 +1,10 @@
 import Vue from 'vue';
 import CustomHeader from './modules/Header.vue';
 import CustomFooter from './modules/Footer.vue';
-import CustomTabPanel from './modules/TabPanel.vue';
+import CustomTabPanel from './modules/NavPanel.vue';
 import Home from './modules/Home.vue';
 import House from './modules/House.vue';
+import Prices from './modules/Prices.vue';
 
 /*import Rooms from './modules/Jumbotron.vue';
 import House from './modules/Jumbotron.vue';
@@ -21,5 +22,6 @@ new Vue({
         'customtabpanel': CustomTabPanel,
         'home': Home,
         'house': House,
+        Prices
     } 
 });

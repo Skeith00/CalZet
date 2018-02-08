@@ -74,9 +74,64 @@ header {
     justify-content: space-between;
     align-items: stretch;
 }
-
 //Gallery
-.fade-transition {
+.galleryComponent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gallery {
+    height:400px;
+    width:400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+        max-width:400px;
+        max-height:400px;
+        width: auto;
+        height: auto;
+      }
+}
+// Price Table
+.priceTable {
+    box-sizing: border-box;
+    max-width: 314.125px;
+    border: 1px solid rgb(46, 204, 113);
+    border-radius: 10px 10px 10px 10px;
+    padding: 40px 20px;
+    font: normal normal 300 normal 82px / 82px Arial, Helvetica, Arial;
+    text-align: center;
+    margin-top: 20px;
+
+    h3 {
+        letter-spacing: 0.27px;
+        font: normal normal 600 normal 18px / 18px Arial, Helvetica, Arial;
+        margin: 0px 0px 10px;
+    }
+    .rate {
+        color: rgb(46, 204, 113);
+        margin: 0px;
+        margin-bottom: 0 !important;
+    }
+    .currency {
+        vertical-align: super;
+        font: normal normal 300 normal 41px / 82px Arial, Helvetica, Arial;
+    }
+    .each {
+        font: normal normal 300 normal 16px / 82px Arial, Helvetica, Arial;
+    }
+    .description {
+        height: 67.2px;
+        max-width: 280px;
+        //width: 272.125px;
+        font: normal normal 300 normal 14px / 22.4px Arial, Helvetica, Arial;
+        margin: 0px;
+    }
+}
+
+
+/*.fade-transition {
     transition: all 0.8s ease;
     overflow: hidden;
     visibility: visible;
@@ -86,6 +141,14 @@ header {
 .fade-enter, .fade-leave {
     opacity: 0;
     visibility: hidden;
+}*/
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active, .slide-fade-leave-active  {
+    transition: opacity .3s ease;
+}
+.slide-fade-enter, .slide-fade-leave-to {
+    opacity: 0;
 }
 
 //Footer
