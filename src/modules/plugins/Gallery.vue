@@ -1,19 +1,19 @@
 <template>
 <!--https://vuejs.org/v2/guide/transitions.html-->
-    <div    @mouseover="stopRotation"
-            @mouseout="startRotation"
-            class="galleryComponent">
-        <div @click="prev">
-            <i class="fas fa-chevron-left fa-7x"/>
-        </div>
-        <div class="gallery">
-              <transition name="slide-fade" mode="out-in">
-                <img :src="'dist/images/house/'+imgs[Math.abs(currentNumber) % imgs.length]" :key="'dist/images/house/'+imgs[Math.abs(currentNumber) % imgs.length]"/>
-            </transition>
-        </div>
-        <div @click="prev">
-            <i class="fas fa-chevron-right fa-7x"/>
-        </div>
+    <div @mouseover="stopRotation"
+         @mouseout="startRotation"
+         class="galleryComponent">
+            <div @click="prev" class="arrow">
+                <i class="fas fa-chevron-left fa-7x"/>
+            </div>
+            <div class="gallery">
+                <transition name="slide-fade" mode="out-in">
+                    <img :src="'dist/images/house/'+$parent.imgs[Math.abs(currentNumber) % $parent.imgs.length]" :key="'dist/images/house/'+$parent.imgs[Math.abs(currentNumber) % $parent.imgs.length]"/>
+                </transition>
+            </div>
+            <div @click="prev" class="arrow">
+                <i class="fas fa-chevron-right fa-7x"/>
+            </div>
     </div>
 </template>
 <script>

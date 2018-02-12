@@ -5,7 +5,7 @@
                 <span><i class="fas fa-home fa-3x"></i></span>
             </div>
             <div>
-                <h5>La casa</h5>
+                <h2>La casa</h2>
             </div>
 		</div>
         <p style="margin-top: 25px;">La casa esta distribuida en tres àmplies plantes.</p>

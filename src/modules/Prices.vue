@@ -5,12 +5,11 @@
                 <span><i class="fas fa-euro-sign fa-3x"></i></span>
             </div>
             <div>
-                <h5>Preus</h5>
+                <h2>Preus</h2>
             </div>
 		</div>
-        <div>
-            <pricetable></pricetable>
-            <pricetable></pricetable>
+        <div class="containerPrices">
+            <pricetable v-for="rate in rates" v-bind="rate" :key="rate.name"></pricetable>
         </div>
     </div>     
 </template>
@@ -22,6 +21,15 @@ export default {
     name: 'prices',
     components: {
        'pricetable': PriceTableVue
+    },
+    data() {
+        return {
+            rates: [
+                {name: 'Tarifa General', price: '22', comment:''},
+                {name: 'Temporada d’hivern', price: '23', comment:'Mínim 6 persones, a partir de la tercera nit 20€'},
+            ]
+        }
     }
+
 }
 </script>

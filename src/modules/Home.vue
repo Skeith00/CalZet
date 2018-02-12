@@ -5,14 +5,14 @@
                 <span><i class="fas fa-info-circle fa-3x"></i></span>
             </div>
             <div>
-                <h5>Descripció</h5>
+                <h2>Descripció</h2>
             </div>
 		</div>
         <h2>Montellà de Cadí</h2>
         <p>Montellà és una vila del municipi cerdà de Montellà i Martinet. Es troba a una altitud de 1.153 metres sobre el nivell del mar.</p>
         <hr>
-        <div class="columns is-desktop is-multiline is-centered">
-            <div v-for="sight in sights"  style="margin: 25px;">
+        <div class="containerPrices">
+            <div v-for="sight in sights"  style="margin: 25px; width: 250px; min-width: 250px;">
                 <h4>{{sight.name}}</h4>
                 <ul>
                     <li v-for="activitie in sight.activities" v-text="activitie"></li>
