@@ -12471,7 +12471,7 @@ var render = function() {
     },
     [
       _c("div", { staticClass: "arrow", on: { click: _vm.prev } }, [
-        _c("i", { staticClass: "fas fa-chevron-left fa-7x" })
+        _c("i", { staticClass: "fas fa-chevron-left fa-5x" })
       ]),
       _vm._v(" "),
       _c(
@@ -12499,7 +12499,7 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("div", { staticClass: "arrow", on: { click: _vm.prev } }, [
-        _c("i", { staticClass: "fas fa-chevron-right fa-7x" })
+        _c("i", { staticClass: "fas fa-chevron-right fa-5x" })
       ])
     ]
   )

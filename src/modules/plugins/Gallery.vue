@@ -4,7 +4,7 @@
          @mouseout="startRotation"
          class="galleryComponent">
             <div @click="prev" class="arrow">
-                <i class="fas fa-chevron-left fa-7x"/>
+                <i class="fas fa-chevron-left fa-5x"/>
             </div>
             <div class="gallery">
                 <transition name="slide-fade" mode="out-in">
@@ -12,7 +12,7 @@
                 </transition>
             </div>
             <div @click="prev" class="arrow">
-                <i class="fas fa-chevron-right fa-7x"/>
+                <i class="fas fa-chevron-right fa-5x"/>
             </div>
     </div>
 </template>
