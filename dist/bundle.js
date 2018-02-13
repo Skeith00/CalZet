@@ -11708,6 +11708,7 @@ var render = function() {
                         return _c(
                           "a",
                           {
+                            key: language.code,
                             class: [
                               "navbar-item",
                               {
@@ -11779,9 +11780,15 @@ var staticRenderFns = [
       [
         _c("div", { staticClass: "field is-grouped" }, [
           _c("p", { staticClass: "control" }, [
-            _c("a", { attrs: { href: "#" } }, [
-              _c("i", { staticClass: "fab fa-facebook-f fa-lg" })
-            ])
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "https://www.facebook.com/Cal-Zet-1691476634451525/"
+                }
+              },
+              [_c("i", { staticClass: "fab fa-facebook-f fa-lg" })]
+            )
           ]),
           _vm._v(" "),
           _c("p", { staticClass: "control" }, [
@@ -12018,14 +12025,6 @@ if (false) {(function () {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
     name: 'navbar',
@@ -12051,7 +12050,7 @@ if (false) {(function () {
         handleScroll() {
             var scrollPos = document.body.scrollTop;
             var scrollTopContainer = document.getElementById("mainContainer").offsetTop;
-            if (scrollPos > scrollTopContainer) this.fixedTabs = true;else this.fixedTabs = false;
+            if (scrollPos > scrollTopContainer - 2) this.fixedTabs = true;else this.fixedTabs = false;
 
             /* TODO: Actualment, Ubicacio no s'arriba a seleccionar mai al fer scroll, 
                     ja que scrollTop es queda a uns pixels d'arribar al principi del div.
@@ -12061,7 +12060,7 @@ if (false) {(function () {
             var currentnav;
             this.tabs.forEach(function (item) {
                 var refElement = document.getElementById(item.code);
-                if (refElement.offsetTop <= scrollPos && refElement.offsetTop + refElement.offsetHeight > scrollPos) currentnav = item.code;
+                if (refElement.offsetTop <= scrollPos + 42 && refElement.offsetTop + refElement.offsetHeight > scrollPos + 42) currentnav = item.code;
             });
             this.currenttabnav = currentnav;
         }

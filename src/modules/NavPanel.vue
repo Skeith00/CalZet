@@ -11,14 +11,6 @@
             </li>
         </ul>
     </div>
-
-    <!--<header class="masthead clearfix">
-      <div class="inner">
-          <nav class="nav nav-masthead">
-            <a :class="['nav-link', (currentTab == 'home')?'active':'']" @click="setTab('home')" href="#">Home</a>
-            <a :class="['nav-link', (currentTab == 'features')?'active':'' ]" @click="setTab('features')" href="#">Features</a>
-            <a :class="['nav-link', (currentTab == 'contact')?'active':'' ]" @click="setTab('contact')" href="#">Contact</a>
-          </nav>-->
 </template>
 <script>
 export default {
@@ -51,7 +43,7 @@ export default {
         handleScroll() {
             var scrollPos = document.body.scrollTop;
             var scrollTopContainer = document.getElementById("mainContainer").offsetTop;
-            if(scrollPos>scrollTopContainer)
+            if(scrollPos>scrollTopContainer-2)
                 this.fixedTabs = true;
             else   
                 this.fixedTabs = false;
@@ -64,7 +56,7 @@ export default {
             var currentnav;
             this.tabs.forEach(function(item){
                 var refElement = document.getElementById(item.code);                
-                if (refElement.offsetTop <= scrollPos && refElement.offsetTop + refElement.offsetHeight > scrollPos)  
+                if (refElement.offsetTop <= scrollPos+42 && refElement.offsetTop + refElement.offsetHeight > scrollPos+42)  
                     currentnav = item.code;
             });
             this.currenttabnav = currentnav;

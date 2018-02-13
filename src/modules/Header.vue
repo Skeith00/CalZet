@@ -22,7 +22,7 @@
                             <a v-for="language in langsettings.languages"
                                 :class="['navbar-item', { 'is-active': (language.code == langsettings.currentLanguage.code) }]" 
                                 @click="setLang(language)"
-                                href="#">
+                                href="#" :key="language.code">
                                 <p style="margin-left: 8px"><img :src="'dist/images/flags/'+language.flag" alt="flag">
                                 {{language.name}}</p>
                             </a>
@@ -31,7 +31,7 @@
                     <div class="navbar-item" style="padding-left: 25px">
                         <div class="field is-grouped">
                             <p class="control">
-                                <a href="#"><i class="fab fa-facebook-f fa-lg"></i></a>
+                                <a href="https://www.facebook.com/Cal-Zet-1691476634451525/"><i class="fab fa-facebook-f fa-lg"></i></a>
                             </p>
                             <p class="control">
                                 <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
