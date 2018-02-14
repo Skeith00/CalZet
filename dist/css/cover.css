@@ -6675,8 +6675,6 @@ header {
   .priceTable .each {
     font: normal normal 300 normal 16px / 82px Arial, Helvetica, Arial; }
   .priceTable .description {
-    height: 67.2px;
-    max-width: 280px;
     font: normal normal 300 normal 14px / 22.4px Arial, Helvetica, Arial;
     margin: 0px; }
 
