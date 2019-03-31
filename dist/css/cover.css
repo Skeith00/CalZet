@@ -6504,6 +6504,9 @@ label.panel-block {
   background-color: whitesmoke;
   padding: 3rem 1.5rem 6rem; }
 
+html {
+  scroll-behavior: smooth; }
+
 body {
   background-color: #b2cecf; }
 
@@ -6511,6 +6514,12 @@ body {
   width: 100%;
   margin-left: auto;
   margin-right: auto; }
+
+@media screen and (max-width: 768px) {
+  .calzet {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto; } }
 
 @media (min-width: 768px) {
   .calzet {
@@ -6551,6 +6560,7 @@ header {
   padding: 4; }
 
 .tabs {
+  height: 42px;
   background-color: #363636;
   z-index: 999; }
 
@@ -6590,7 +6600,8 @@ header {
 .galleryComponent {
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  max-height: 400px; }
 
 .gallery {
   height: 400px;
@@ -6615,6 +6626,24 @@ header {
   flex-direction: column; }
   .arrow i {
     color: whitesmoke; }
+
+@media screen and (max-width: 768px) {
+  .gallery {
+    height: 200px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #363636; }
+    .gallery img {
+      max-width: 200px;
+      max-height: 200px;
+      width: auto;
+      height: auto; }
+  .galleryComponent {
+    max-height: 200px; }
+  .arrow {
+    max-height: 200px; } }
 
 .containerPrices, .home {
   display: flex;
@@ -6646,24 +6675,9 @@ header {
   .priceTable .each {
     font: normal normal 300 normal 16px / 82px Arial, Helvetica, Arial; }
   .priceTable .description {
-    height: 67.2px;
-    max-width: 280px;
     font: normal normal 300 normal 14px / 22.4px Arial, Helvetica, Arial;
     margin: 0px; }
 
-/*.fade-transition {
-    transition: all 0.8s ease;
-    overflow: hidden;
-    visibility: visible;
-    opacity: 1;
-    position: absolute;
-}
-.fade-enter, .fade-leave {
-    opacity: 0;
-    visibility: hidden;
-}*/
-/* Enter and leave animations can use different */
-/* durations and timing functions.              */
 .slide-fade-enter-active, .slide-fade-leave-active {
   transition: opacity .3s ease; }
 

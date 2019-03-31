@@ -7,14 +7,14 @@ import House from './modules/House.vue';
 import Rooms from './modules/Rooms.vue';
 import Prices from './modules/Prices.vue';
 import Location from './modules/Location.vue';
-
-/*import Rooms from './modules/Jumbotron.vue';*/
+import store from './store/store.js';
 
 new Vue({
     el: '#root',
     data: {
         showModal: false,
-    }, 
+    },
+    store,
     components: {
         'customheader' : CustomHeader,
         'customfooter': CustomFooter,

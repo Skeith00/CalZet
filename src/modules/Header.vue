@@ -13,16 +13,16 @@
             </div>
             <div id="navbarExampleTransparentExample" :class="['navbar-menu', {'is-active':toggled}]">
                 <div class="navbar-end">
-                    <a v-for="tab in tabs" class="navbar-item" @click="setTab(tab.code)" :href="tab.link">{{tab.title[langsettings.currentLanguage.code]}}</a>
+                    <a v-for="tab in tabs" class="navbar-item" @click="setTab(tab.code)" :href="tab.link">{{tab.title[getLang.code]}}</a>
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link" style="width: 130px">
-                            {{langsettings.currentLanguage.name}}
+                            {{getLang.name}}
                         </a>
                         <div class="navbar-dropdown is-boxed">
                             <a v-for="language in langsettings.languages"
-                                :class="['navbar-item', { 'is-active': (language.code == langsettings.currentLanguage.code) }]" 
+                                :class="['navbar-item', { 'is-active': (language.code == getLang.code) }]" 
                                 @click="setLang(language)"
-                                href="#">
+                                href="#" :key="language.code">
                                 <p style="margin-left: 8px"><img :src="'dist/images/flags/'+language.flag" alt="flag">
                                 {{language.name}}</p>
                             </a>
@@ -31,7 +31,7 @@
                     <div class="navbar-item" style="padding-left: 25px">
                         <div class="field is-grouped">
                             <p class="control">
-                                <a href="#"><i class="fab fa-facebook-f fa-lg"></i></a>
+                                <a href="https://www.facebook.com/Cal-Zet-1691476634451525/"><i class="fab fa-facebook-f fa-lg"></i></a>
                             </p>
                             <p class="control">
                                 <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
@@ -57,7 +57,6 @@ export default {
                 {title: { CA: "Contacte", ES: "Contacto", AR: "Contacte", EN: "Contact"}, link: "./contacte.html", code: "ct"},
             ],
             langsettings: {
-                currentLanguage: {name: "Català", code: "CA"},
                 languages: [
                     {name: "Català", code: "CA", flag: "catalonia.png"},
                     {name:"Castellano", code: "ES", flag: "es.png" },
@@ -74,13 +73,17 @@ export default {
             this.currentTab = code;
         }, 
         setLang(lang) {
-            this.langsettings.currentLanguage.name = lang.name;
-            this.langsettings.currentLanguage.code = lang.code;
+            this.$store.dispatch('changeLang', lang);
             this.toggled = false;
         },
         togglenavmenu() {
             this.toggled = (this.toggled==true?false:true);
-        }
+        },
     },
+    computed: {
+        getLang(){
+            return this.$store.getters.getCurrentLang;
+        },
+    }
 }
 </script>
